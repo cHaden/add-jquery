@@ -1,0 +1,19 @@
+<div id="calendar-modal" class="modal hide fade">
+  <%= form_tag enroll_course_path, method: :post do %>
+    <div class="modal-header">
+      <h3>Calendar stuff <%= @course.course_code %></h3>
+    </div>
+    <div class="modal-body">
+      <%= hidden_field_tag :id, @course.id %>
+      <span class="field-label"><%= label_tag :calendar, "Calendar" %></span>
+      <div class="input-prepend">
+        <span class="add-on">@</span>
+        <%= text_field_tag :calendar, nil, type: "calendar", required: true %>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a class="btn" data-dismiss="modal">Close</a>
+      <%= submit_tag "Calendar", class: "btn btn-success" %>
+    </div>
+  <% end %>
+</div>
