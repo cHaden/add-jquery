@@ -5,12 +5,33 @@
     </div>
     <div class="modal-body">
       <%= hidden_field_tag :id, @course.id %>
-      <span class="field-label"><%= label_tag :calendar, "Calendar" %></span>
+      <span class="field-label"><%= label_tag :starts_on, "Starts on" %></span>
       <div class="input-prepend">
         <span class="add-on">@</span>
-        <%= text_field_tag :calendar, nil, type: "calendar", required: true %>
+        <%= text_field_tag :starts_on, nil, type: "Starts on", required: true %>
+      </div><br>
+
+      <span class="field-label"><%= label_tag :ends_on, "Ends on" %></span>
+      <div class="input-prepend">
+        <span class="add-on">@</span>
+        <%= text_field_tag :ends_on, nil, type: "Ends on", required: true %>
+      </div><br>
+
+      <span class="field-label"><%= label_tag :calendar, "Calendar" %></span>
+      <div class='col-sm-6'>
+          <input type='text' class="form-control" id='datetimepicker4'/>
       </div>
+      <script type="text/javascript">
+          $(function () {
+              $('#datetimepicker4').datetimepicker();
+          });
+      </script>
+
+
     </div>
+
+
+
     <div class="modal-footer">
       <a class="btn" data-dismiss="modal">Close</a>
       <%= submit_tag "Calendar", class: "btn btn-success" %>
